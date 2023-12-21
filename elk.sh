@@ -5,7 +5,7 @@ sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 cp /root/software_shortcut/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo 
 
 echo -e "\e[36mInstalling Elastic search\e[0m"
-yum install elasticsearch -y
+yum install --enablerepo=elasticsearch elasticsearch  -y
 
 echo -e "\e[36mConfiguring elasticsearch.yml file\e[0m"
 IPADDR=$(hostname -i | awk '{print $NF}')

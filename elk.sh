@@ -1,7 +1,7 @@
 echo -e "${color}Downloading Elasticsearch repo${nocolor}"
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-cp /home/centos/roboshop-shell/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo &>>${logfile}
+cp /home/centos/software_shortcut/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo &>>${logfile}
 
 echo -e "${color}Installing Elastic search${nocolor}"
 yum install elasticsearch -y
@@ -23,7 +23,7 @@ systemctl start kibana
 echo -e "${color}Installing Logstash${nocolor}"
 yum install logstash -y
 echo -e "${color}copying logstash.conf file${nocolor}"
-cp /home/centos/roboshop-shell/logstash.conf  /etc/logstash/conf.d/logstash.conf &>>${logfile}
+cp /home/centos/software_shortcut/logstash.conf  /etc/logstash/conf.d/logstash.conf &>>${logfile}
 echo -e "${color}Enabling and starting logstash${nocolor}"
 systemctl enable logstash
 systemctl start logstash
@@ -33,7 +33,7 @@ yum install nginx -y
 echo -e "${color}Removing Default nginx conf file${nocolor}"
 rm -rf  /etc/nginx/nginx.conf
 echo -e "${color}Adding nginx conf file${nocolor}"
-cp /home/centos/roboshop-shell/nginx.conf  /etc/logstash/conf.d/nginx.conf &>>${logfile}
+cp /home/centos/software_shortcut/nginx.conf  /etc/logstash/conf.d/nginx.conf &>>${logfile}
 echo -e "${color}Enabling and starting Nginx${nocolor}"
 systemctl enable nginx
 systemctl start nginx

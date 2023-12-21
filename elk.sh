@@ -1,7 +1,7 @@
 echo -e "\e[36mDownloading Elasticsearch repo \e[0m"
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-cp /home/centos/software_shortcut/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo 
+cp /root/software_shortcut/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo 
 
 echo -e "\e[36mInstalling Elastic search\e[0m"
 yum install elasticsearch -y
@@ -12,28 +12,28 @@ sed -i -e "/network.host/ c network.host: 0.0.0.0" -e "/http.port/ c http.port: 
 
 echo -e "\e[36mEnabling and starting Elasticsearch\e[0m"
 systemctl enable elasticsearch
-systemctl start elasticsearch
+systemctl restart elasticsearch
 
 echo -e "\e[36mInstalling Kibana\e[0m"
 yum install kibana -y
 echo -e "\e[36mEnabling and starting kibana\e[0m"
 systemctl enable kibana
-systemctl start kibana
+systemctl restart kibana
 
 echo -e "\e[36mInstalling Logstash\e[0m"
 yum install logstash -y
 echo -e "\e[36mcopying logstash.conf file\e[0m"
-cp /home/centos/software_shortcut/logstash.conf  /etc/logstash/conf.d/logstash.conf
+cp /root/software_shortcut/logstash.conf  /etc/logstash/conf.d/logstash.conf
 echo -e "\e[36mEnabling and starting logstash\e[0m"
 systemctl enable logstash
-systemctl start logstash
+systemctl restart logstash
 
 echo -e "\e[36mInstalling Nginx Server\e[0m"
 yum install nginx -y
 echo -e "\e[36mRemoving Default nginx conf file\e[0m"
 rm -rf  /etc/nginx/nginx.conf
 echo -e "\e[36mAdding nginx conf file\e[0m"
-cp /home/centos/software_shortcut/nginx.conf  /etc/logstash/conf.d/nginx.conf
+cp /root/software_shortcut/nginx.conf  /etc/logstash/conf.d/nginx.conf
 echo -e "\e[36mEnabling and starting Nginx\e[0m"
 systemctl enable nginx
-systemctl start nginx
+systemctl restart nginx

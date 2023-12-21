@@ -1,4 +1,5 @@
 echo -e "\e[36mDownloading Elasticsearch repo \e[0m"
+yum install java -y
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
 cp /root/software_shortcut/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo 

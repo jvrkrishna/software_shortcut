@@ -7,7 +7,7 @@ echo -e "\e[36mInstalling Elastic search\e[0m"
 yum install elasticsearch -y
 
 echo -e "\e[36mConfiguring elasticsearch.yml file\e[0m"
-IPADDR=$(hostname -i | awk '{print $NF}')
+#IPADDR=$(hostname -i | awk '{print $NF}')
 sed -i -e "/network.host/ c network.host: 0.0.0.0" -e "/http.port/ c http.port: 9200" -e "/cluster.initial_master_nodes/ c cluster.initial_master_nodes: \[\"${IPADDR}\"\]" /etc/elasticsearch/elasticsearch.yml
 
 echo -e "\e[36mEnabling and starting Elasticsearch\e[0m"
@@ -23,7 +23,7 @@ systemctl start kibana
 echo -e "\e[36mInstalling Logstash\e[0m"
 yum install logstash -y
 echo -e "\e[36mcopying logstash.conf file\e[0m"
-cp /home/centos/software_shortcut/logstash.conf  /etc/logstash/conf.d/logstash.conf 
+cp /home/centos/software_shortcut/logstash.conf  /etc/logstash/conf.d/logstash.conf
 echo -e "\e[36mEnabling and starting logstash\e[0m"
 systemctl enable logstash
 systemctl start logstash

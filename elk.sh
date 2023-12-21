@@ -1,11 +1,10 @@
 echo -e "\e[36mDownloading Elasticsearch repo \e[0m"
-yum install java -y
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
 cp /root/software_shortcut/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo 
 
 echo -e "\e[36mInstalling Elastic search\e[0m"
-yum install --enablerepo=elasticsearch elasticsearch  -y
+yum install elasticsearch -y
 
 echo -e "\e[36mConfiguring elasticsearch.yml file\e[0m"
 IPADDR=$(hostname -i | awk '{print $NF}')

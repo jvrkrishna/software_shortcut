@@ -1,4 +1,4 @@
-echo -e "\e[36m Downloading Elasticsearch repo \e[0m"
+echo -e "\e[36mDownloading Elasticsearch repo \e[0m"
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
 cp /home/centos/software_shortcut/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo 

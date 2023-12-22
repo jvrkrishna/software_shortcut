@@ -19,7 +19,7 @@ systemctl restart kibana
 echo -e "\e[36mInstalling Logstash\e[0m"
 yum install logstash -y
 echo -e "\e[36mcopying logstash.conf file\e[0m"
-##cp /root/software_shortcut/logstash.conf  /etc/logstash/conf.d/logstash.conf
+cp /root/software_shortcut/logstash.conf  /etc/logstash/conf.d/logstash.conf
 echo -e "\e[36mEnabling and starting logstash\e[0m"
 systemctl enable logstash
 systemctl restart logstash
@@ -27,9 +27,9 @@ systemctl restart logstash
 echo -e "\e[36mInstalling Nginx Server\e[0m"
 yum install nginx -y
 echo -e "\e[36mRemoving Default nginx conf file\e[0m"
-##rm -rf  /etc/nginx/nginx.conf
+rm -rf  /etc/nginx/nginx.conf
 echo -e "\e[36mAdding nginx conf file\e[0m"
-##cp /root/software_shortcut/nginx.conf  /etc/logstash/conf.d/nginx.conf
+cp /root/software_shortcut/nginx.conf  /etc/nginx/nginx.conf
 echo -e "\e[36mEnabling and starting Nginx\e[0m"
 systemctl enable nginx
 systemctl restart nginx

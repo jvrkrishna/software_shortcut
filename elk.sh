@@ -34,8 +34,3 @@ echo -e "\e[36mEnabling and starting Nginx\e[0m"
 systemctl enable nginx
 systemctl restart nginx
 
-
-#### To reset password ----- /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic
-#### To reset password ----- /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u kibana_system
-####/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana --url "https://172.31.23.80:9200"
-####/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s node

@@ -5,3 +5,6 @@ terraform:
 
 elk:
 	@sudo bash elk.sh
+
+ansible:
+	@sudo bash ansible.sh
